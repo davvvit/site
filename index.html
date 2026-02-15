@@ -11,23 +11,22 @@
       height: 100%;
       width: 100%;
       overflow: hidden; /* prevent body scroll */
+      background: black; /* optional background */
     }
     .scroll-container {
       width: 100vw;
       height: 100vh;
       overflow: auto; /* allow scrolling */
       -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: black; /* optional background behind image */
     }
     img {
-      min-width: 100%;
-      min-height: 100%;
+      display: block;
+      max-width: none;  /* allow image to exceed container */
+      max-height: none;
       width: auto;
       height: auto;
-      display: block;
+      min-width: 100%;   /* ensures it fills width */
+      min-height: 100%;  /* ensures it fills height */
     }
   </style>
 </head>
@@ -37,3 +36,4 @@
   </div>
 </body>
 </html>
+
