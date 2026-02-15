@@ -2,19 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fullscreen Image</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Fullscreen Scrollable Image</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      width: 100%;
+      overflow: hidden; /* prevent body scroll */
     }
-    body {
-      background: url('emis.png') no-repeat center center;
-      background-size: cover;
+    .scroll-container {
+      width: 100vw;
+      height: 100vh;
+      overflow: auto; /* allow scrolling */
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black; /* optional background behind image */
+    }
+    img {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      display: block;
     }
   </style>
 </head>
 <body>
+  <div class="scroll-container">
+    <img src="emis.png" alt="Fullscreen Scrollable Image">
+  </div>
 </body>
 </html>
